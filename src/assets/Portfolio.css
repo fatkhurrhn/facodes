@@ -1,0 +1,40 @@
+.portfolio-page {
+    padding: 2rem;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.portfolio-item p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: #00d8ff;
+    font-weight: bold;
+}
+
+.portfolio-item a:hover {
+    text-decoration: underline;
+}
