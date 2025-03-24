@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-[#141417] fixed w-full z-20 top-0 start-0 border-b border-[#252529]">
-            <div className="max-w-4xl mx-auto flex items-center justify-between px-3 py-4">
+            <div className="max-w-7xl mx-auto flex items-center justify-between px-3 py-4">
                 {/* Hamburger Menu Button (Mobile) */}
                 <button
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}

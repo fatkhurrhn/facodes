@@ -264,8 +264,8 @@ export default function ProjectsPage() {
                     </div>
                 ) : (
                     <div className={displayMode === 'grid' 
-                        ? "grid grid-cols-1 md:grid-cols-2 gap-8" 
-                        : "space-y-8"
+                        ? "grid grid-cols-1 md:grid-cols-3 gap-4" 
+                        : "space-y-3"
                     }>
                         {currentProjects.map(project => (
                             <div 
