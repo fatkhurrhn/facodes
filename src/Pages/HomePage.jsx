@@ -4,12 +4,12 @@ import Footer from "../Components/Footer";
 
 export default function ProjectsPage() {
     // Sample project data - replace with your actual projects
-    const [projects, setProjects] = useState([
+    const [projects] = useState([
         {
             id: 1,
             title: "Weather Dashboard",
             description: "A responsive weather application that shows current weather and forecasts using the OpenWeatherMap API.",
-            image: "/images/weather-app.jpg",
+            image: "https://kantata.marketing/wp-content/uploads/2021/08/project-managemenr-goals.jpg",
             category: "Web App",
             tags: ["React", "API", "Tailwind CSS"],
             demoLink: "https://weather-demo.example.com",
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
             id: 2,
             title: "E-commerce Store",
             description: "A fully functional online store with product listings, cart functionality, and payment integration.",
-            image: "/images/ecommerce.jpg",
+            image: "/vite.svg",
             category: "Web App",
             tags: ["Next.js", "MongoDB", "Stripe"],
             demoLink: "https://store-demo.example.com",
@@ -277,11 +277,11 @@ export default function ProjectsPage() {
                                 <div className={`${displayMode === 'list' ? 'md:w-1/3' : 'w-full'} relative`}>
                                     <div className="aspect-video bg-[#252529] relative overflow-hidden">
                                         {/* Placeholder for project image */}
-                                        <div className="absolute inset-0 flex items-center justify-center text-gray-500 bg-gradient-to-br from-[#1D1D20] to-[#252529]">
+                                        {/* <div className="absolute inset-0 flex items-center justify-center text-gray-500 bg-gradient-to-br from-[#1D1D20] to-[#252529]">
                                             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                             </svg>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     {project.featured && (
                                         <div className="absolute top-2 left-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-bold px-2 py-1 rounded-lg">
