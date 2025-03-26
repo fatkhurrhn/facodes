@@ -10,7 +10,7 @@ const projectsData = [
         description: "Full-stack e-commerce dashboard with real-time analytics and comprehensive sales tracking.",
         technologies: ["React", "Node.js", "MongoDB"],
         category: "Web Development",
-        thumbnail: "/projects/ecommerce-dashboard.png",
+        thumbnail: "https://pustakakoding.com/images/project/pustakakoding-aplikasi-pengelolaan-data-member-laravel11.jpg",
         githubLink: "https://github.com/yourusername/ecommerce-dashboard",
         liveLink: "https://your-ecommerce-dashboard.vercel.app",
         featured: true
@@ -26,34 +26,78 @@ const projectsData = [
         liveLink: null,
         featured: false
     },
+    {
+        id: 3,
+        title: "AI Chatbot",
+        description: "Intelligent chatbot with advanced natural language processing capabilities.",
+        technologies: ["Python", "TensorFlow", "Flask"],
+        category: "Machine Learning",
+        thumbnail: "/projects/ai-chatbot.png",
+        githubLink: "https://github.com/yourusername/ai-chatbot",
+        liveLink: null,
+        featured: false
+    },
+    {
+        id: 4,
+        title: "AI Chatbot",
+        description: "Intelligent chatbot with advanced natural language processing capabilities.",
+        technologies: ["Python", "TensorFlow", "Flask"],
+        category: "Machine Learning",
+        thumbnail: "/projects/ai-chatbot.png",
+        githubLink: "https://github.com/yourusername/ai-chatbot",
+        liveLink: null,
+        featured: false
+    },
+    {
+        id: 5,
+        title: "AI Chatbot",
+        description: "Intelligent chatbot with advanced natural language processing capabilities.",
+        technologies: ["Python", "TensorFlow", "Flask"],
+        category: "Machine Learning",
+        thumbnail: "/projects/ai-chatbot.png",
+        githubLink: "https://github.com/yourusername/ai-chatbot",
+        liveLink: null,
+        featured: false
+    },
+    {
+        id: 6,
+        title: "AI Chatbot",
+        description: "Intelligent chatbot with advanced natural language processing capabilities.",
+        technologies: ["Python", "TensorFlow", "Flask"],
+        category: "Machine Learning",
+        thumbnail: "/projects/ai-chatbot.png",
+        githubLink: "https://github.com/yourusername/ai-chatbot",
+        liveLink: null,
+        featured: false
+    },
     // Add more projects here
 ];
 
 // Categories for filtering with icons
 const CATEGORIES = [
-    { 
-        name: "All", 
-        icon: "ri-apps-line" 
+    {
+        name: "All",
+        icon: "ri-apps-line"
     },
-    { 
-        name: "Web Development", 
-        icon: "ri-computer-line" 
+    {
+        name: "Web Development",
+        icon: "ri-computer-line"
     },
-    { 
-        name: "Machine Learning", 
-        icon: "ri-brain-line" 
+    {
+        name: "Machine Learning",
+        icon: "ri-brain-line"
     },
-    { 
-        name: "Mobile App", 
-        icon: "ri-smartphone-line" 
+    {
+        name: "Mobile App",
+        icon: "ri-smartphone-line"
     },
-    { 
-        name: "Data Science", 
-        icon: "ri-database-2-line" 
+    {
+        name: "Data Science",
+        icon: "ri-database-2-line"
     },
-    { 
-        name: "Automation", 
-        icon: "ri-robot-line" 
+    {
+        name: "Automation",
+        icon: "ri-robot-line"
     }
 ];
 
@@ -66,13 +110,13 @@ export function ProjectsPage() {
     const filteredProjects = useMemo(() => {
         return projectsData.filter(project => {
             const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                  project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                  project.technologies.some(tech => 
-                                      tech.toLowerCase().includes(searchTerm.toLowerCase())
-                                  );
-            
+                project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                project.technologies.some(tech =>
+                    tech.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+
             const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
-            
+
             return matchesSearch && matchesCategory;
         });
     }, [searchTerm, selectedCategory]);
@@ -80,7 +124,7 @@ export function ProjectsPage() {
     return (
         <div className="bg-[#141417] min-h-screen text-white transition-colors duration-300 relative">
             <Navbar />
-            
+
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
                 {/* Hero Section */}
                 <div className="text-center mb-12 space-y-4">
@@ -88,8 +132,8 @@ export function ProjectsPage() {
                         My Digital Playground
                     </h1>
                     <p className="text-gray-300 max-w-3xl mx-auto text-base sm:text-lg">
-                        Exploring the boundaries of technology, one project at a time. 
-                        A curated collection of innovative solutions that showcase 
+                        Exploring the boundaries of technology, one project at a time.
+                        A curated collection of innovative solutions that showcase
                         creativity, problem-solving, and technical expertise.
                     </p>
                 </div>
@@ -98,8 +142,8 @@ export function ProjectsPage() {
                 <div className="mb-12 space-y-6">
                     {/* Search Input */}
                     <div className="relative max-w-2xl mx-auto">
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             placeholder="Search projects by name, technology, or description..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
@@ -113,28 +157,31 @@ export function ProjectsPage() {
                     {/* Category and View Mode Container */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                         {/* Category Filters */}
-                        <div className="flex flex-wrap justify-center gap-2">
-                            {CATEGORIES.map(category => (
-                                <button
-                                    key={category.name}
-                                    onClick={() => setSelectedCategory(category.name)}
-                                    className={`
-                                        flex items-center gap-2 px-4 py-2 rounded-full text-sm 
-                                        transition-all duration-300 
-                                        ${selectedCategory === category.name 
-                                            ? 'bg-blue-600 text-white' 
-                                            : 'bg-[#1E1E24] text-gray-400 hover:bg-[#252529] hover:text-white'}
-                                    `}
-                                >
-                                    <i className={`${category.icon} text-lg`}></i>
-                                    {category.name}
-                                </button>
-                            ))}
-                        </div>
+<div className="w-full overflow-x-auto scrollbar-hide">
+    <div className="flex md:flex-wrap md:justify-center gap-2 min-w-max">
+        {CATEGORIES.map(category => (
+            <button
+                key={category.name}
+                onClick={() => setSelectedCategory(category.name)}
+                className={`
+                    flex items-center gap-2 px-4 py-2 rounded-full text-sm 
+                    transition-all duration-300 whitespace-nowrap
+                    ${selectedCategory === category.name
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-[#1E1E24] text-gray-400 hover:bg-[#252529] hover:text-white'}
+                `}
+            >
+                <i className={`${category.icon} text-lg`}></i>
+                {category.name}
+            </button>
+        ))}
+    </div>
+</div>
+
 
                         {/* View Mode Toggle */}
                         <div className="flex bg-[#1E1E24] rounded-full p-1">
-                            <button 
+                            <button
                                 onClick={() => setViewMode('grid')}
                                 className={`
                                     p-2 rounded-full transition-colors 
@@ -143,7 +190,7 @@ export function ProjectsPage() {
                             >
                                 <i className="ri-grid-line text-lg"></i>
                             </button>
-                            <button 
+                            <button
                                 onClick={() => setViewMode('list')}
                                 className={`
                                     p-2 rounded-full transition-colors 
@@ -158,16 +205,16 @@ export function ProjectsPage() {
 
                 {/* Projects Grid/List */}
                 <div className={`
-                    ${viewMode === 'grid' 
-                        ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' 
-                        : 'space-y-6'
+                    ${viewMode === 'grid'
+                        ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'
+                        : 'space-y-4'
                     }
                 `}>
                     {filteredProjects.map(project => (
-                        <div 
-                            key={project.id} 
+                        <div
+                            key={project.id}
                             className={`
-                                bg-[#1E1E24] rounded-2xl overflow-hidden 
+                                bg-[#1E1E24] rounded-[12px] overflow-hidden 
                                 shadow-lg transform transition-all duration-300 
                                 hover:scale-[1.02] hover:shadow-xl
                                 ${viewMode === 'list' ? 'flex' : ''}
@@ -178,9 +225,9 @@ export function ProjectsPage() {
                                 relative overflow-hidden
                                 ${viewMode === 'grid' ? 'h-56' : 'w-56 h-48 flex-shrink-0'}
                             `}>
-                                <img 
-                                    src={project.thumbnail} 
-                                    alt={project.title} 
+                                <img
+                                    src={project.thumbnail}
+                                    alt={project.title}
                                     className="w-full h-full object-cover"
                                 />
                                 {project.featured && (
@@ -192,18 +239,18 @@ export function ProjectsPage() {
 
                             {/* Project Details */}
                             <div className={`
-                                p-6 flex flex-col justify-between 
+                                p-4 flex flex-col justify-between 
                                 ${viewMode === 'list' ? 'flex-grow' : ''}
                             `}>
                                 <div>
                                     <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
                                     <p className="text-gray-400 mb-4">{project.description}</p>
-                                    
+
                                     {/* Technologies */}
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {project.technologies.map(tech => (
-                                            <span 
-                                                key={tech} 
+                                            <span
+                                                key={tech}
                                                 className="bg-[#252529] text-gray-300 px-3 py-1 rounded-full text-xs"
                                             >
                                                 {tech}
@@ -213,25 +260,25 @@ export function ProjectsPage() {
                                 </div>
 
                                 {/* Action Buttons */}
-                                <div className="flex gap-4 mt-auto">
+                                <div className="flex gap-3 mt-auto">
                                     {project.githubLink && (
-                                        <a 
-                                            href={project.githubLink} 
-                                            target="_blank" 
+                                        <a
+                                            href={project.githubLink}
+                                            target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                                            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 hover:text-white transition-all"
                                         >
-                                            <i className="ri-github-fill text-xl"></i> GitHub
+                                            <i className="ri-github-fill text-lg"></i> GitHub
                                         </a>
                                     )}
                                     {project.liveLink && (
-                                        <a 
-                                            href={project.liveLink} 
-                                            target="_blank" 
+                                        <a
+                                            href={project.liveLink}
+                                            target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                                            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-400 bg-blue-900 rounded-lg shadow-md hover:bg-blue-700 hover:text-white transition-all"
                                         >
-                                            <i className="ri-external-link-line text-xl"></i> Live Demo
+                                            <i className="ri-external-link-line text-lg"></i> Live Demo
                                         </a>
                                     )}
                                 </div>
