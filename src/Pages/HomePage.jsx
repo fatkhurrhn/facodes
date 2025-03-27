@@ -157,26 +157,26 @@ export function ProjectsPage() {
                     {/* Category and View Mode Container */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                         {/* Category Filters */}
-<div className="w-full overflow-x-auto scrollbar-hide">
-    <div className="flex md:flex-wrap md:justify-center gap-2 min-w-max">
-        {CATEGORIES.map(category => (
-            <button
-                key={category.name}
-                onClick={() => setSelectedCategory(category.name)}
-                className={`
+                        <div className="w-full overflow-x-auto scrollbar-hide">
+                            <div className="flex md:flex-wrap md:justify-center gap-2 min-w-max">
+                                {CATEGORIES.map(category => (
+                                    <button
+                                        key={category.name}
+                                        onClick={() => setSelectedCategory(category.name)}
+                                        className={`
                     flex items-center gap-2 px-4 py-2 rounded-full text-sm 
                     transition-all duration-300 whitespace-nowrap
                     ${selectedCategory === category.name
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-[#1E1E24] text-gray-400 hover:bg-[#252529] hover:text-white'}
+                                                ? 'bg-blue-600 text-white'
+                                                : 'bg-[#1E1E24] text-gray-400 hover:bg-[#252529] hover:text-white'}
                 `}
-            >
-                <i className={`${category.icon} text-lg`}></i>
-                {category.name}
-            </button>
-        ))}
-    </div>
-</div>
+                                    >
+                                        <i className={`${category.icon} text-lg`}></i>
+                                        {category.name}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
 
 
                         {/* View Mode Toggle */}

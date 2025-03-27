@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
-import Navbar01 from "../../Pages/FrontendCodeCollection/Navbar/Navbar01";
-import Navbar02 from "../../Pages/FrontendCodeCollection/Navbar/Navbar02";
-import Card01 from "../../Pages/FrontendCodeCollection/Card/Card01";
-import Card02 from "../../Pages/FrontendCodeCollection/Card/Card02";
+import Navbar01 from "../Navbar/Navbar01";
+import Navbar02 from "../Navbar/Navbar02";
+import Card01 from "../Card/Card01";
+import Card02 from "../Card/Card02";
 
 const pages = {
     navbar01: <Navbar01 />,
