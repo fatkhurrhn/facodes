@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Editor from "../../Components/Editor";
 
 const App = () => {
@@ -57,7 +57,7 @@ const App = () => {
     }
     `;
 
-    const defaultJs = ``;
+    const defaultJs = `// JavaScript code goes here`;
 
     const [html, setHtml] = useState(defaultHtml);
     const [css, setCss] = useState(defaultCss);
@@ -83,13 +83,13 @@ const App = () => {
         <div className="flex flex-col h-screen relative">
             {/* Header Navigasi */}
             <div className="bg-gray-800 text-white p-2">
-                <a href="/">home</a> <i class="ri-arrow-right-s-line"></i>
-                <a href="/code-collection">code collection</a> <i class="ri-arrow-right-s-line"></i>
-                <a href="/code-collection/css">css</a> <i class="ri-arrow-right-s-line"></i>
-                <a href="/code-collection/css/buttons">buttons</a> <i class="ri-arrow-right-s-line"></i>
+                <a href="/">home</a> <i className="ri-arrow-right-s-line"></i>
+                <a href="/code-collection">code collection</a> <i className="ri-arrow-right-s-line"></i>
+                <a href="/code-collection/css">css</a> <i className="ri-arrow-right-s-line"></i>
+                <a href="/code-collection/css/buttons">buttons</a> <i className="ri-arrow-right-s-line"></i>
                 <span>button01</span>
             </div>
-    
+
             <div className="h-1/2 flex flex-col md:flex-row overflow-auto">
                 <div className="hidden md:flex w-1/3 flex-col">
                     <Editor language="xml" displayName="HTML" value={html} onChange={setHtml} className="w-full h-full" />
@@ -100,7 +100,7 @@ const App = () => {
                 <div className="hidden md:flex w-1/3 flex-col">
                     <Editor language="javascript" displayName="JavaScript" value={js} onChange={setJS} className="w-full h-full" />
                 </div>
-    
+
                 {/* Mobile View */}
                 <div className="md:hidden flex flex-col w-full h-full overflow-auto">
                     <div className="flex justify-between bg-gray-900 text-white py-2">
@@ -115,7 +115,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
-    
+
             <div className="h-1/2 border-t border-gray-700 flex-1 overflow-hidden">
                 <iframe
                     srcDoc={srcDoc}
@@ -128,7 +128,7 @@ const App = () => {
                     scrolling="no"
                 />
             </div>
-    
+
             {/* Buttons */}
             <div className="absolute bottom-4 right-2 flex gap-1 mr-2">
                 <button
