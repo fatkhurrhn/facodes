@@ -1,11 +1,11 @@
 import { useState, useMemo } from 'react';
-import YTTT from '../Components/tesfull';
+import YT from './tesfull';
 
 const projectsData = [
     {
         id: 1,
         title: "E-Commerce Dashboard",
-        description: "Full-stack e-commerce dashboard with real-time analytTTics and comprehensive sales tracking.",
+        description: "Full-stack e-commerce dashboard with real-time analytics and comprehensive sales tracking.",
         technologies: ["React", "Node.js", "MongoDB"],
         category: "Web Development",
         thumbnail: "https://pustakakoding.com/images/project/pustakakoding-aplikasi-pengelolaan-data-member-laravel11.jpg",
@@ -43,7 +43,7 @@ export function ProjectsPage() {
 
     return (
         <div className={`min-h-screen transition-colors duration-300 relative ${isDarkMode ? 'bg-[#141417] text-white' : 'bg-white text-black'}`}>
-            <YTTT/>
+            <YT/>
             <button
                 onClick={toggleTheme}
                 className="fixed bottom-5 right-5 w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 shadow-lg">
@@ -84,7 +84,7 @@ export function ProjectsPage() {
                     {filteredProjects.map(project => (
                         <a key={project.id} href={project.detailpage} className={`block rounded-[12px] shadow-lg transform transition-all hover:scale-[1.02] hover:shadow-xl ${isDarkMode ? 'bg-[#1E1E24]' : 'bg-gray-100'}`}>
                             <div className="relative overflow-hidden h-56">
-                                <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover rounded-tl-[10px] rounded-tr-[10px]" />
+                                <img src={project.thumbnail} alt={project.title} className="rounded-tl-[10px] rounded-tr-[10px] w-full h-full object-cover" />
                                 {project.featured && <span className="absolute top-3 right-3 bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold">Featured</span>}
                             </div>
                             <div className="p-4">
