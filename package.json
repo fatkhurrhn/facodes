@@ -1,43 +1,35 @@
 {
-  "name": "my-project",
+  "name": "codepan-clone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3008",
+    "dev": "vite --port 8880",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview --port 3008"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@codemirror/basic-setup": "^0.20.0",
-    "@codemirror/lang-css": "^6.3.1",
-    "@codemirror/lang-html": "^6.4.9",
-    "@codemirror/lang-javascript": "^6.2.3",
-    "@codemirror/state": "^6.5.2",
-    "@codemirror/theme-one-dark": "^6.1.2",
-    "@codemirror/view": "^6.36.4",
-    "@monaco-editor/react": "^4.7.0",
-    "@uiw/codemirror-theme-dracula": "^4.23.10",
-    "@uiw/react-codemirror": "^4.23.10",
-    "codemirror": "^6.0.1",
-    "lucide-react": "^0.484.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@remixicon/react": "^4.5.0",
+    "codemirror": "^5.65.18",
+    "react": "^18.3.1",
+    "react-codemirror2": "^8.0.0",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^7.4.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
-    "vite": "^6.2.0"
+    "vite": "^6.0.1"
   }
 }

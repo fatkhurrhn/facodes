@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import Navbar from "../Components/Navbar";
+import Navbars from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 // Project data structure
@@ -123,7 +123,7 @@ export function ProjectsPage() {
 
     return (
         <div className="bg-[#141417] min-h-screen text-white transition-colors duration-300 relative">
-            <Navbar />
+            <Navbars />
 
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
                 {/* Hero Section */}
