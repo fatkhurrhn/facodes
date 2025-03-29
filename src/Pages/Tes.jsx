@@ -1,262 +1,268 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-// Sample Project Data (sama seperti sebelumnya)
-const projectsData = [
-  {
-    id: 1,
-    title: "Sistem Pengendalian Persediaan Barang dengan Metode EOQ",
-    thumbnail: "/api/placeholder/400/300",
-    category: "Manajemen Inventaris",
-    date: "15 Maret 2024",
-    description: "Sebuah sistem manajemen inventaris menggunakan metode Economic Order Quantity (EOQ) untuk optimasi persediaan barang.",
-    technologies: ["React", "Python", "Django"],
-    githubLink: "#"
-  },
-  {
-    id: 2,
-    title: "Aplikasi Monitoring Kinerja Karyawan",
-    thumbnail: "/api/placeholder/400/300",
-    category: "Manajemen SDM",
-    date: "20 Januari 2024",
-    description: "Aplikasi web untuk monitoring dan evaluasi kinerja karyawan secara komprehensif.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    githubLink: "#"
-  },
-  {
-    id: 3,
-    title: "Dashboard Analitik Penjualan E-commerce",
-    thumbnail: "/api/placeholder/400/300",
-    category: "Business Intelligence",
-    date: "10 Februari 2024",
-    description: "Dashboard interaktif untuk menganalisis performa penjualan dan tren pasar.",
-    technologies: ["React", "Chart.js", "Express"],
-    githubLink: "#"
-  }
-];
+// Home Page Component
+function Home() {
+  const [activeTab, setActiveTab] = useState('components');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
-// Navbar Component
-const Navbar = ({ toggleDarkMode, isDarkMode }) => {
-  return (
-    <nav className={`
-      fixed top-0 left-0 w-full z-50 
-      ${isDarkMode ? 'bg-gray-900/80 text-white' : 'bg-white/80 text-black'}
-      backdrop-blur-md shadow-sm py-4
-    `}>
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <a 
-          href="/" 
-          className="text-2xl font-bold hover:opacity-80 transition-opacity"
-        >
-          facodes
-        </a>
-        <div className="flex items-center space-x-4">
-          <button 
-            onClick={toggleDarkMode} 
-            className="hover:opacity-80 transition-opacity"
-          >
-            {isDarkMode ? <i class="ri-skip-right-line"></i> : <i class="ri-skip-right-line"></i>}
-          </button>
-          
-          <div className="flex items-center space-x-4 pl-4 border-l">
-            <a 
-              href="https://github.com/fatkhurrhn" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-            >
-              {/* github */}<i class="ri-skip-right-line"></i>
-            </a>
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-            >
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-};
+  // Sample data for components
+  const componentsData = [
+    { id: 'card-01', title: 'Simple Card Component', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-20', category: 'card' },
+    { id: 'modal-01', title: 'Modal Dialog', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-18', category: 'modal' },
+    { id: 'navbar-01', title: 'Responsive Navbar', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-15', category: 'navbar' },
+    { id: 'button-01', title: 'Button Collection', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-10', category: 'button' },
+    { id: 'form-01', title: 'Form Elements', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-05', category: 'form' },
+    { id: 'dropdown-01', title: 'Custom Dropdown', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-02-28', category: 'dropdown' },
+  ];
 
-// Project Card Component
-const ProjectCard = ({ project = {}, isDarkMode = false }) => {
-    return (
-      <div className={` 
-        rounded-xl overflow-hidden shadow-lg transform transition-all 
-        hover:scale-105 cursor-pointer
-        ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}
-      `}>
-        <img 
-          src={project.thumbnail || "https://via.placeholder.com/300"} 
-          alt={project.title || "No Title"} 
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-5">
-          <h3 className="text-lg font-semibold mb-2 truncate">
-            {project.title || "Untitled Project"}
-          </h3>
-          <div className="flex items-center justify-between text-sm mb-2">
-            <span className={`
-              px-2 py-1 rounded-full text-xs 
-              ${isDarkMode ? 'bg-gray-700' : 'bg-gray-100'}
-            `}>
-              {project.category || "No Category"}
-            </span>
-            <span className="text-gray-500">{project.date || "Unknown Date"}</span>
-          </div>
-          <div className="flex space-x-2 mt-2">
-            {(project.technologies || []).map((tech, index) => (
-              <span 
-                key={index} 
-                className={`
-                  px-2 py-1 rounded-full text-xs 
-                  ${isDarkMode ? 'bg-gray-700' : 'bg-gray-100'}
-                `}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
+  // Sample data for templates
+  const templatesData = [
+    { id: 'template-01', title: 'Dashboard Template', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-25', category: 'dashboard' },
+    { id: 'template-02', title: 'Landing Page Template', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-22', category: 'landing' },
+    { id: 'template-03', title: 'Admin Panel Template', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-17', category: 'admin' },
+    { id: 'template-04', title: 'eCommerce Template', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-12', category: 'ecommerce' },
+    { id: 'template-05', title: 'Blog Template', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-08', category: 'blog' },
+    { id: 'template-06', title: 'Portfolio Template', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-01', category: 'portfolio' },
+  ];
 
-// Main Projects Page
-const ProjectsPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // Sample data for blog
+  const blogData = [
+    { id: 'blog-01', title: 'Getting Started with UI Components', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-24', category: 'tutorial' },
+    { id: 'blog-02', title: 'Best Practices for Component Design', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-21', category: 'design' },
+    { id: 'blog-03', title: 'Component-Driven Development', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-19', category: 'development' },
+    { id: 'blog-04', title: 'Accessibility in UI Components', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-16', category: 'accessibility' },
+    { id: 'blog-05', title: 'State Management in React Components', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-11', category: 'react' },
+    { id: 'blog-06', title: 'Performance Optimization Tips', thumbnail: 'https://via.placeholder.com/300x200', date: '2025-03-07', category: 'performance' },
+  ];
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+  // Get active data based on selected tab
+  const getActiveData = () => {
+    switch(activeTab) {
+      case 'components':
+        return componentsData;
+      case 'templates':
+        return templatesData;
+      case 'blog':
+        return blogData;
+      default:
+        return [];
+    }
   };
 
-  // Filter Projects
-  const filteredProjects = projectsData.filter(project => 
-    (project.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-     project.category.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    (selectedCategory === '' || project.category === selectedCategory)
-  );
+  // Filter data based on search query and category
+  const filteredData = getActiveData().filter(item => {
+    const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
-  // Get Unique Categories
-  const categories = [...new Set(projectsData.map(project => project.category))];
+  // Get unique categories for the current active tab
+  const categories = ['all', ...new Set(getActiveData().map(item => item.category))];
 
   return (
-    <div className={`
-      min-h-screen pt-20 pb-16
-      ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}
-      transition-colors duration-300
-    `}>
-      <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Search and Filter Section */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4">
-          <div className="relative flex-grow">
+    <div className="home">
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-logo">
+            <Link to="/">
+              <i className="ri-layout-grid-line"></i>
+              <span>ChetanVerma/UI</span>
+            </Link>
+          </div>
+          <div className="navbar-links">
+            <Link to="/" className="navbar-link">
+              <i className="ri-layout-masonry-line"></i>
+              <span>Templates</span>
+            </Link>
+            <Link to="/" className="navbar-link navbar-link-new">
+              <span>New</span>
+            </Link>
+            <Link to="/" className="navbar-link">
+              <i className="ri-puzzle-piece-line"></i>
+              <span>Components</span>
+            </Link>
+            <Link to="/" className="navbar-link">
+              <i className="ri-github-fill"></i>
+              <span>Github</span>
+            </Link>
+          </div>
+          <div className="navbar-profile">
+            <button className="profile-button">
+              <i className="ri-user-line"></i>
+              <span>Chetan Verma</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Open Source Beautiful Crafted UI Blocks, Components & Templates</h1>
+          <p>Drop in ready-to-use open-source UI blocks, components, and templates with seamless styles and animations. Just copy, paste, and build.</p>
+          <a href="#" className="portfolio-link">
+            Check out my portfolio <i className="ri-external-link-line"></i>
+          </a>
+        </div>
+      </section>
+
+      {/* Tabs Section */}
+      <section className="tabs-section">
+        <div className="tabs-container">
+          <div className="tabs">
+            <button 
+              className={`tab ${activeTab === 'components' ? 'active' : ''}`}
+              onClick={() => setActiveTab('components')}
+            >
+              Components
+            </button>
+            <button 
+              className={`tab ${activeTab === 'templates' ? 'active' : ''}`}
+              onClick={() => setActiveTab('templates')}
+            >
+              Templates
+            </button>
+            <button 
+              className={`tab ${activeTab === 'blog' ? 'active' : ''}`}
+              onClick={() => setActiveTab('blog')}
+            >
+              Blog
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Search and Filter Section */}
+      <section className="search-filter">
+        <div className="search-container">
+          <div className="search-input">
+            <i className="ri-search-line"></i>
             <input 
               type="text" 
-              placeholder="Cari project..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className={`
-                w-full p-3 rounded-xl border-2 
-                ${isDarkMode 
-                  ? 'bg-gray-800 border-gray-700 text-white' 
-                  : 'bg-white border-gray-200'}
-                focus:outline-none focus:ring-2 
-                ${isDarkMode 
-                  ? 'focus:ring-blue-600' 
-                  : 'focus:ring-blue-300'}
-              `}
+              placeholder="Search components..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          
-          <select 
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className={`
-              p-3 rounded-xl border-2 
-              ${isDarkMode 
-                ? 'bg-gray-800 border-gray-700 text-white' 
-                : 'bg-white border-gray-200'}
-              focus:outline-none focus:ring-2 
-              ${isDarkMode 
-                ? 'focus:ring-blue-600' 
-                : 'focus:ring-blue-300'}
-            `}
-          >
-            <option value="">Semua Kategori</option>
+          <div className="categories">
             {categories.map(category => (
-              <option key={category} value={category}>
-                {category}
-              </option>
+              <button 
+                key={category}
+                className={`category ${selectedCategory === category ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </button>
             ))}
-          </select>
+          </div>
         </div>
+      </section>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map(project => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              isDarkMode={isDarkMode} 
-            />
+      {/* Category Pills */}
+      <section className="categories-pills">
+        <div className="pills-container">
+          <button className="pill">navbar</button>
+          <button className="pill">card</button>
+          <button className="pill">form</button>
+          <button className="pill">modal</button>
+          <button className="pill">table</button>
+          <button className="pill">dropdown</button>
+          <button className="pill">slider</button>
+          <button className="pill">input</button>
+          <button className="pill">button</button>
+          <button className="pill">media</button>
+          <button className="pill">badge</button>
+          <button className="pill">avatar</button>
+          <button className="pill">tooltip</button>
+          <button className="pill">popover</button>
+          <button className="pill">accordion</button>
+          <button className="pill">tabs</button>
+          <button className="pill">image</button>
+        </div>
+      </section>
+
+      {/* Cards Grid */}
+      <section className="cards-grid">
+        <div className="grid-container">
+          {filteredData.map(item => (
+            <Link to={`/detail/${item.id}`} key={item.id} className="card">
+              <div className="card-thumbnail">
+                <img src={item.thumbnail} alt={item.title} />
+              </div>
+              <div className="card-content">
+                <h3>{item.title}</h3>
+                <p className="card-date">{new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              </div>
+            </Link>
           ))}
         </div>
-
-        {/* No Projects Found */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-10">
-            <p>Tidak ada project yang ditemukan.</p>
-          </div>
-        )}
-      </div>
+      </section>
 
       {/* Footer */}
-      <footer className={`
-        fixed bottom-0 left-0 w-full p-4 
-        ${isDarkMode ? 'bg-gray-900/80 text-white' : 'bg-white/80 text-black'}
-        backdrop-blur-md shadow-sm
-      `}>
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <p className="text-sm">
-            © {new Date().getFullYear()} Fatkhurrhn, All rights reserved.
-          </p>
-          <div className="flex space-x-4">
-            <a 
-              href="https://github.com/fatkhurrhn" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-            >
-              <i class="ri-skip-right-line"></i>
-            </a>
-            <a 
-              href="https://www.instagram.com/fatkhurrhn" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-            >
-              <i class="ri-skip-right-line"></i>
-            </a>
-            <a 
-              href="https://www.tiktok.com/@fatkhurrhn" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity"
-            >
-              <i class="ri-skip-right-line"></i>
-            </a>
+      <footer className="footer">
+        <div className="footer-container">
+          <p>&copy; 2025 UI Components Library. All rights reserved.</p>
+          <div className="social-links">
+            <a href="#"><i className="ri-twitter-fill"></i></a>
+            <a href="#"><i className="ri-github-fill"></i></a>
+            <a href="#"><i className="ri-linkedin-fill"></i></a>
           </div>
         </div>
       </footer>
     </div>
   );
-};
+}
 
-export default ProjectsPage;
+// Detail Page Component
+function Detail() {
+  return (
+    <div className="detail-page">
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-logo">
+            <Link to="/">
+              <i className="ri-layout-grid-line"></i>
+              <span>ChetanVerma/UI</span>
+            </Link>
+          </div>
+          <div className="navbar-links">
+            <Link to="/" className="navbar-link">
+              <i className="ri-layout-masonry-line"></i>
+              <span>Templates</span>
+            </Link>
+            <Link to="/" className="navbar-link navbar-link-new">
+              <span>New</span>
+            </Link>
+            <Link to="/" className="navbar-link">
+              <i className="ri-puzzle-piece-line"></i>
+              <span>Components</span>
+            </Link>
+            <Link to="/" className="navbar-link">
+              <i className="ri-github-fill"></i>
+              <span>Github</span>
+            </Link>
+          </div>
+          <div className="navbar-profile">
+            <button className="profile-button">
+              <i className="ri-user-line"></i>
+              <span>Chetan Verma</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div className="detail-content">
+        <Link to="/" className="back-button">
+          <i className="ri-arrow-left-line"></i> Back to Home
+        </Link>
+        <h1>Component Detail Page</h1>
+        <p>This is a placeholder for the component detail page. You'll implement the actual content later.</p>
+      </div>
+    </div>
+  );
+}
+
+export default App;
