@@ -8,7 +8,7 @@ const HeroSection = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Discover My <span className="text-blue-600">Projects</span>
+            Discover My <span className="text-[#035b71]">Projects</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Open-source solutions to boost your development workflow

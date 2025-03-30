@@ -14,7 +14,7 @@ const ProjectDetail = () => {
           {/* Title and main content (left side) */}
           <div className="lg:w-2/3">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 break-words">
-              Repo Sync
+              Quote Generator
             </h1>
 
             {/* Project Thumbnail */}
@@ -57,7 +57,7 @@ const ProjectDetail = () => {
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
               <div className="flex justify-between items-center mb-3">
                 <h3 className="font-bold">
-                  Repo Sync
+                  Quote Generator
                 </h3>
               </div>
 

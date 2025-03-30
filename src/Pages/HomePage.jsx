@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 import Hero from "../Components/HeroSection";
 
 // import images - thumnail
-import thumbail from "/Project/thumbnail.png";
+import thumbail from "/Project/sample.png";
 
 const Projects = () => {
   // Sample data
@@ -383,7 +383,7 @@ const Projects = () => {
           </div>
         ) : (
           /* Projects Display */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {filteredData.length > 0 ? (
               filteredData.map((item) => (
                 <Link
@@ -407,7 +407,7 @@ const Projects = () => {
                   
                   {/* Content */}
                   <div className="p-4 flex-grow flex flex-col">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#035b71] transition-colors">
                       {item.title}
                     </h3>
                     
