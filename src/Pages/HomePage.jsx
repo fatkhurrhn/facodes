@@ -4,25 +4,105 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Hero from "../Components/HeroSection";
 
+// import images - thumnail
+import thumbail from "/Project/thumbnail.png";
+
 const Projects = () => {
   // Sample data
   const projectsData = [
     {
-      id: 'project-01',
-      title: 'E-commerce Dashboard',
-      categories: ['#React', '#NodeJS', '#MongoDB'],
-      thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-      date: '2023-10-15'
+      id: 'repo-sync',
+      title: 'Repo Sync',
+      categories: ['#GitHub', '#Automation'],
+      thumbnail: thumbail,
+      date: '2023-06-22'
     },
     {
-      id: 'project-02',
-      title: 'Weather App',
-      categories: ['#React', '#API', '#Tailwind'],
-      thumbnail: 'https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Frame_181.original.png',
-      date: '2023-11-20'
+      id: 'hex-code-color-generator',
+      title: 'Hex Code Color Generator',
+      categories: ['#JavaScript', '#WebTools'],
+      thumbnail:  thumbail,
+      date: '2024-05-20'
+    },
+    {
+      id: 'todo-list-es6',
+      title: 'Todo List with ES6',
+      categories: ['#JavaScript', '#TodoApp'],
+      thumbnail:  thumbail,
+      date: '2024-05-09'
+    },
+    {
+      id: 'web-playground',
+      title: 'Web Playground',
+      categories: ['#CodeEditor', '#JavaScript'],
+      thumbnail:  thumbail,
+      date: '2024-07-26'
+    },
+    {
+      id: 'simple-crud-nodejs',
+      title: 'Simple CRUD Node.js',
+      categories: ['#NodeJS', '#Express', '#CRUD'],
+      thumbnail:  thumbail,
+      date: '2024-02-21'
+    },
+    {
+      id: 'floral-surprise',
+      title: 'Floral Surprise',
+      categories: ['#Graphics', '#WebDesign'],
+      thumbnail:  thumbail,
+      date: '2023-02-23'
+    },
+    {
+      id: 'portfolio-nextjs',
+      title: 'Portfolio with Next.js',
+      categories: ['#NextJS', '#Portfolio'],
+      thumbnail:  thumbail,
+      date: '2023-07-12'
+    },
+    {
+      id: 'dream-lms',
+      title: 'Dream LMS',
+      categories: ['#Laravel', '#LMS'],
+      thumbnail:  thumbail,
+      date: '2024-01-13'
+    },
+    {
+      id: 'quote-generator',
+      title: 'Quote Generator',
+      categories: ['#JavaScript', '#Quotes'],
+      thumbnail:  thumbail,
+      date: '2023-08-28'
+    },
+    {
+      id: 'shop-thur',
+      title: 'Shop Thur',
+      categories: ['#Ecommerce', '#WebApp'],
+      thumbnail:  thumbail,
+      date: '2025-01-18'
+    },
+    {
+      id: 'kalkulator-istighfar',
+      title: 'Kalkulator Istighfar',
+      categories: ['#JavaScript', '#FunApp'],
+      thumbnail:  thumbail,
+      date: '2023-05-18'
+    },
+    {
+      id: 'multi-image-upload',
+      title: 'Multi Image Upload',
+      categories: ['#JavaScript', '#FileUpload'],
+      thumbnail:  thumbail,
+      date: '2024-01-26'
+    },
+    {
+      id: 'id-card-generator',
+      title: 'ID Card Generator',
+      categories: ['#EventTools', '#WebApp'],
+      thumbnail:  thumbail,
+      date: '2023-03-16'
     }
   ];
-
+  
   const templatesData = [
     {
       id: 'template-01',
@@ -40,7 +120,35 @@ const Projects = () => {
       categories: ['#React', '#JWT'],
       thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
       date: '2023-12-05'
-    }
+    },
+    {
+        id: 'component-02',
+        title: 'Auth Components',
+        categories: ['#React', '#JWT'],
+        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+        date: '2023-12-05'
+      },
+      {
+        id: 'component-03',
+        title: 'Auth Components',
+        categories: ['#React', '#JWT'],
+        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+        date: '2023-12-05'
+      },
+      {
+        id: 'component-04',
+        title: 'Auth Components',
+        categories: ['#React', '#JWT'],
+        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+        date: '2023-12-05'
+      },
+      {
+        id: 'component-05',
+        title: 'Auth Components',
+        categories: ['#React', '#JWT'],
+        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+        date: '2023-12-05'
+      },
   ];
 
   // All unique tags
@@ -275,13 +383,13 @@ const Projects = () => {
           </div>
         ) : (
           /* Projects Display */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {filteredData.length > 0 ? (
               filteredData.map((item) => (
                 <Link
                   to={`/${item.id}`}
                   key={item.id}
-                  className="group bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 h-full flex flex-col"
+                  className="group bg-white rounded-[8px] shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 h-full flex flex-col"
                 >
                   {/* Thumbnail */}
                   <div className="relative h-48 overflow-hidden">
