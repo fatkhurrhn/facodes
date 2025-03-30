@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import Hero from "../Components/HeroSection";
 
 const Projects = () => {
   // Sample data
@@ -53,7 +56,6 @@ const Projects = () => {
   const [sortOption, setSortOption] = useState('newest');
   const [activeTab, setActiveTab] = useState('projects');
   const [isLoading, setIsLoading] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Get current tab data
   const getCurrentData = () => {
@@ -121,91 +123,14 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center text-xl font-semibold text-blue-600">
-                <i className="ri-terminal-box-fill mr-2"></i>
-                Facodes
-              </Link>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-              <a href="#projects" className="text-gray-700 hover:text-blue-600">Projects</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600">Contact</a>
-            </div>
-            
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden text-gray-500 hover:text-gray-700"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <i className="ri-menu-line text-2xl"></i>
-            </button>
-          </div>
-        </div>
-        
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link 
-                to="/" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <a 
-                href="#projects" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Projects
-              </a>
-              <a 
-                href="#about" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </a>
-              <a 
-                href="#contact" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* Navbar Section */}
+        <Navbar/>
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-blue-200 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-indigo-200 rounded-full filter blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Discover My <span className="text-blue-600">Projects</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Open-source solutions to boost your development workflow
-          </p>
-        </div>
-      </div>
+      <Hero/>
 
       {/* Main Content */}
-      <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         {/* Tabs and Search/Sort Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
           {/* Tabs on the left */}
@@ -275,7 +200,7 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Items Found and Tags */}
+        {/* Tags */}
         <div className="mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
             {/* <h2 className="text-lg font-medium text-gray-900">
@@ -302,7 +227,7 @@ const Projects = () => {
                   ))}
                   <button 
                     onClick={clearFilters}
-                    className="text-xs text-blue-600 hover:underline"
+                    className="text-xs text-blue-600"
                   >
                     Clear all
                   </button>
@@ -422,65 +347,7 @@ const Projects = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                <i className="ri-terminal-box-fill mr-2 text-blue-600"></i>
-                Facodes
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Open-source projects for developers and creators.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-500 hover:text-blue-600">
-                  <i className="ri-github-fill text-xl"></i>
-                </a>
-                <a href="#" className="text-gray-500 hover:text-blue-600">
-                  <i className="ri-twitter-fill text-xl"></i>
-                </a>
-                <a href="#" className="text-gray-500 hover:text-blue-600">
-                  <i className="ri-discord-fill text-xl"></i>
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><Link to="/" className="text-gray-600 hover:text-blue-600">Home</Link></li>
-                <li><a href="#projects" className="text-gray-600 hover:text-blue-600">Projects</a></li>
-                <li><a href="#about" className="text-gray-600 hover:text-blue-600">About</a></li>
-                <li><a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Subscribe</h4>
-              <p className="text-gray-600 mb-4">
-                Get the latest projects and updates.
-              </p>
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your email" 
-                  className="px-4 py-2 w-full rounded-l-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="px-4 py-2 rounded-r-md bg-blue-600 text-white hover:bg-blue-700 transition-colors">
-                  <i className="ri-send-plane-fill"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} Facodes. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
