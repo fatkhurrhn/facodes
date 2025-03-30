@@ -8,7 +8,7 @@ const Projects = () => {
       id: 'project-01',
       title: 'E-commerce Dashboard',
       categories: ['#React', '#NodeJS', '#MongoDB'],
-      thumbnail: 'https://source.unsplash.com/random/600x400/?ecommerce,dashboard',
+      thumbnail: 'https://startupstudio.id/wp-content/uploads/2022/10/06.-SSI_November-2022_Header.jpg',
       date: '2023-10-15'
     },
     {
