@@ -19,7 +19,7 @@ const Projects = () => {
     },
     {
       id: 'hex-code-color-generator',
-      title: 'Hex Code Color Generatorr',
+      title: 'Hex Code Color Generator',
       categories: ['#JavaScript', '#WebTools'],
       thumbnail:  thumbail,
       date: '2024-05-20'
