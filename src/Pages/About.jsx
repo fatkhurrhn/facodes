@@ -26,6 +26,34 @@ export default function About() {
             <li>UI/UX Design</li>
           </ul>
         </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+          <p className="whitespace-normal text-justify">
+            I have 5 years of experience working as a frontend developer with React. 
+            Ive worked on various projects ranging from small business websites to large enterprise applications.
+            {/* Add more text here to see the wrapping behavior */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.
+          </p>
+        </section>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+          <p className="whitespace-normal text-justify">
+            I have 5 years of experience working as a frontend developer with React. 
+            Ive worked on various projects ranging from small business websites to large enterprise applications.
+            {/* Add more text here to see the wrapping behavior */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.
+          </p>
+        </section>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+          <p className="whitespace-normal text-justify">
+            I have 5 years of experience working as a frontend developer with React. 
+            Ive worked on various projects ranging from small business websites to large enterprise applications.
+            {/* Add more text here to see the wrapping behavior */}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.
+          </p>
+        </section>
       </article>
     );
   }
