@@ -16,7 +16,7 @@ function App() {
         </div>
       </header>
 
-      {/* Main Layout */}
+      {/* Main Content Area */}
       <div className="flex pt-16 min-h-screen"> {/* pt-16 to account for fixed navbar */}
         {/* Desktop Sidebar - Fixed */}
         <div className="hidden lg:block fixed top-16 left-0 bottom-0 w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto z-30">
@@ -43,11 +43,13 @@ function App() {
           </div>
         )}
 
-        {/* Main Content Area */}
-        <main className={`flex-1 overflow-y-auto ${sidebarOpen ? 'ml-64' : ''} lg:ml-64`}>
+        {/* Scrollable Main Content */}
+        <main className={`flex-1 overflow-y-auto transition-all duration-300 ${sidebarOpen ? 'ml-64' : ''} lg:ml-64`}>
           <div className="mx-auto max-w-[1240px]">
-            <div className="p-6 lg:p-8 lg:pl-12"> {/* Adjust padding as needed */}
-              {activePage === 'about' && <About />}
+            <div className="p-6 lg:p-8 lg:pl-12"> {/* Adjustable padding */}
+              <div className="max-w-4xl mx-auto"> {/* Content container */}
+                {activePage === 'about' && <About />}
+              </div>
             </div>
           </div>
         </main>
