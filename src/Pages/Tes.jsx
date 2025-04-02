@@ -17,8 +17,8 @@ const Projects = () => {
       date: '2023-06-22',
       links: {
         download: 'https://example.com/repo-sync/download',
-        demo: 'https://example.com/repo-sync/demo',
-        code: 'https://github.com/fatkhurrhn/repo-sync'
+        demo: '#',
+        code: '#'
       }
     }
   ];

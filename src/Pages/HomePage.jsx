@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import Hero from "../Components/HeroSection";
+// import Hero from "../Components/HeroSection";
 
 // import images - thumnail
-import thumbail from "/Project/sample.png";
+import thumbail from "/Project/thumbnail.png";
 
 const Projects = () => {
   // Sample data
@@ -14,91 +14,170 @@ const Projects = () => {
       title: 'Repo Sync',
       categories: ['#GitHub'],
       thumbnail: thumbail,
-      date: '2023-06-22'
+      date: '2023-06-22',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/repo-sync'
+      }
+      
     },
     {
       id: 'hex-code-color-generator',
       title: 'Hex Code Color Generator',
       categories: ['#WebTools'],
       thumbnail: thumbail,
-      date: '2024-05-20'
+      date: '2024-05-20',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/hex-code-color-generator'
+      }
     },
     {
       id: 'todo-list-es6',
       title: 'Todo List with ES6',
       categories: ['#TodoApp'],
       thumbnail: thumbail,
-      date: '2024-05-09'
+      date: '2024-05-09',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/todo-list-with-ES6'
+      }
     },
     {
       id: 'web-playground',
       title: 'Web Playground',
       categories: ['#CodeEditor'],
       thumbnail: thumbail,
-      date: '2024-07-26'
+      date: '2024-07-26',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/web-playground'
+      }
     },
     {
       id: 'simple-crud-nodejs',
       title: 'Simple CRUD Node.js',
       categories: ['#CRUD'],
       thumbnail: thumbail,
-      date: '2024-02-21'
+      date: '2024-02-21',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/simple-crud-nodejs'
+      }
     },
     {
       id: 'floral-surprise',
       title: 'Floral Surprise',
       categories: ['#Graphics'],
       thumbnail: thumbail,
-      date: '2023-02-23'
+      date: '2023-02-23',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/floral-surprise'
+      }
     },
     {
       id: 'portfolio-nextjs',
       title: 'Portfolio with Next.js',
       categories: ['#Portfolio'],
       thumbnail: thumbail,
-      date: '2023-07-12'
+      date: '2023-07-12',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/portfolio-next.js'
+      }
     },
     {
       id: 'dream-lms',
       title: 'Dream LMS',
       categories: ['#LMS'],
       thumbnail: thumbail,
-      date: '2024-01-13'
+      date: '2024-01-13',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS'
+      }
     },
     {
       id: 'quote-generator',
       title: 'Quote Generator',
-      categories: ['#Quotes'],
+      categories: ['#Portfolio'],
       thumbnail: thumbail,
-      date: '2023-08-28'
+      date: '2023-08-28',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/quote-generator'
+      }
     },
     {
       id: 'shop-thur',
       title: 'Shop Thur',
       categories: ['#Ecommerce'],
       thumbnail: thumbail,
-      date: '2025-01-18'
+      date: '2025-01-18',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: 'https://sfl.gl/PXmJO',
+        code: 'https://github.com/fatkhurrhn/Project_ShopThur'
+      }
     },
     {
       id: 'kalkulator-istighfar',
       title: 'Kalkulator Istighfar',
       categories: ['#FunApp'],
       thumbnail: thumbail,
-      date: '2023-05-18'
+      date: '2023-05-18',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/Project_ShopThur'
+      }
     },
     {
       id: 'multi-image-upload',
       title: 'Multi Image Upload',
       categories: ['#FileUpload'],
       thumbnail: thumbail,
-      date: '2024-01-26'
+      date: '2024-01-26',
+      created: 'fatkhurrhnn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/multple-image-upload'
+      }
     },
     {
       id: 'id-card-generator',
       title: 'ID Card Generator',
       categories: ['#EventTools'],
       thumbnail: thumbail,
-      date: '2023-03-16'
+      date: '2023-03-16',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: 'https://github.com/fatkhurrhn/idcard-generator'
+      }
     }
   ];
 
@@ -108,7 +187,13 @@ const Projects = () => {
       title: 'Portfolio Template',
       categories: ['#NextJS', '#Framer'],
       thumbnail: 'https://startupstudio.id/wp-content/uploads/2022/10/06.-SSI_November-2022_Header.jpg',
-      date: '2023-09-10'
+      date: '2023-09-10',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: '#'
+      }
     }
   ];
 
@@ -118,35 +203,65 @@ const Projects = () => {
       title: 'Auth Components',
       categories: ['#React', '#JWT'],
       thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-      date: '2023-12-05'
+      date: '2023-12-05',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: '#'
+      }
     },
     {
       id: 'component-02',
       title: 'Auth Components',
       categories: ['#React', '#JWT'],
       thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-      date: '2023-12-05'
+      date: '2023-12-05',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: '#'
+      }
     },
     {
       id: 'component-03',
       title: 'Auth Components',
       categories: ['#React', '#JWT'],
       thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-      date: '2023-12-05'
+      date: '2023-12-05',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: '#'
+      }
     },
     {
       id: 'component-04',
       title: 'Auth Components',
       categories: ['#React', '#JWT'],
       thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-      date: '2023-12-05'
+      date: '2023-12-05',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: '#'
+      }
     },
     {
       id: 'component-05',
       title: 'Auth Components',
       categories: ['#React', '#JWT'],
       thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-      date: '2023-12-05'
+      date: '2023-12-05',
+      created: 'fatkhurrhn',
+      links: {
+        download: '#',
+        demo: '#',
+        code: '#'
+      }
     },
   ];
 
@@ -234,7 +349,7 @@ const Projects = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero />
+      {/* <Hero /> */}
 
       {/* Main Content */}
       <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -403,6 +518,11 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <span className="text-white font-medium flex items-center">
+                        created by {item.created} 
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -420,35 +540,38 @@ const Projects = () => {
                           day: 'numeric'
                         })}
                       </div>
-
+                      
                       <div className="flex gap-1">
-                        <a
-                          href="https://github.com/fatkhurrhn"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Download
-                        </a>
-                        <a
-                          href="https://github.com/fatkhurrhn"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Demo
-                        </a>
-                        <a
-                          href="https://github.com/fatkhurrhn"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Code
-                        </a>
+                        {item.links.download && (
+                          <a 
+                            href={item.links.download} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-xs px-3 py-1 bg-blue-600 text-white hover:bg-blue-700 rounded-md transition-colors"
+                          >
+                            Download
+                          </a>
+                        )}
+                        {item.links.demo && (
+                          <a 
+                            href={item.links.demo} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-xs px-3 py-1 bg-green-600 text-white hover:bg-green-700 rounded-md transition-colors"
+                          >
+                            Demo
+                          </a>
+                        )}
+                        {item.links.code && (
+                          <a 
+                            href={item.links.code} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-xs px-3 py-1 bg-gray-800 text-white hover:bg-gray-900 rounded-md transition-colors"
+                          >
+                            Code
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
