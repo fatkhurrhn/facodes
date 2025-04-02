@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Hero from "../Components/HeroSection";
@@ -13,96 +12,96 @@ const Projects = () => {
     {
       id: 'repo-sync',
       title: 'Repo Sync',
-      categories: ['#GitHub', '#Automation'],
+      categories: ['#GitHub'],
       thumbnail: thumbail,
       date: '2023-06-22'
     },
     {
       id: 'hex-code-color-generator',
       title: 'Hex Code Color Generator',
-      categories: ['#JavaScript', '#WebTools'],
-      thumbnail:  thumbail,
+      categories: ['#WebTools'],
+      thumbnail: thumbail,
       date: '2024-05-20'
     },
     {
       id: 'todo-list-es6',
       title: 'Todo List with ES6',
-      categories: ['#JavaScript', '#TodoApp'],
-      thumbnail:  thumbail,
+      categories: ['#TodoApp'],
+      thumbnail: thumbail,
       date: '2024-05-09'
     },
     {
       id: 'web-playground',
       title: 'Web Playground',
-      categories: ['#CodeEditor', '#JavaScript'],
-      thumbnail:  thumbail,
+      categories: ['#CodeEditor'],
+      thumbnail: thumbail,
       date: '2024-07-26'
     },
     {
       id: 'simple-crud-nodejs',
       title: 'Simple CRUD Node.js',
-      categories: ['#NodeJS', '#Express', '#CRUD'],
-      thumbnail:  thumbail,
+      categories: ['#CRUD'],
+      thumbnail: thumbail,
       date: '2024-02-21'
     },
     {
       id: 'floral-surprise',
       title: 'Floral Surprise',
-      categories: ['#Graphics', '#WebDesign'],
-      thumbnail:  thumbail,
+      categories: ['#Graphics'],
+      thumbnail: thumbail,
       date: '2023-02-23'
     },
     {
       id: 'portfolio-nextjs',
       title: 'Portfolio with Next.js',
-      categories: ['#NextJS', '#Portfolio'],
-      thumbnail:  thumbail,
+      categories: ['#Portfolio'],
+      thumbnail: thumbail,
       date: '2023-07-12'
     },
     {
       id: 'dream-lms',
       title: 'Dream LMS',
-      categories: ['#Laravel', '#LMS'],
-      thumbnail:  thumbail,
+      categories: ['#LMS'],
+      thumbnail: thumbail,
       date: '2024-01-13'
     },
     {
       id: 'quote-generator',
       title: 'Quote Generator',
-      categories: ['#JavaScript', '#Quotes'],
-      thumbnail:  thumbail,
+      categories: ['#Quotes'],
+      thumbnail: thumbail,
       date: '2023-08-28'
     },
     {
       id: 'shop-thur',
       title: 'Shop Thur',
-      categories: ['#Ecommerce', '#WebApp'],
-      thumbnail:  thumbail,
+      categories: ['#Ecommerce'],
+      thumbnail: thumbail,
       date: '2025-01-18'
     },
     {
       id: 'kalkulator-istighfar',
       title: 'Kalkulator Istighfar',
-      categories: ['#JavaScript', '#FunApp'],
-      thumbnail:  thumbail,
+      categories: ['#FunApp'],
+      thumbnail: thumbail,
       date: '2023-05-18'
     },
     {
       id: 'multi-image-upload',
       title: 'Multi Image Upload',
-      categories: ['#JavaScript', '#FileUpload'],
-      thumbnail:  thumbail,
+      categories: ['#FileUpload'],
+      thumbnail: thumbail,
       date: '2024-01-26'
     },
     {
       id: 'id-card-generator',
       title: 'ID Card Generator',
-      categories: ['#EventTools', '#WebApp'],
-      thumbnail:  thumbail,
+      categories: ['#EventTools'],
+      thumbnail: thumbail,
       date: '2023-03-16'
     }
   ];
-  
+
   const templatesData = [
     {
       id: 'template-01',
@@ -122,33 +121,33 @@ const Projects = () => {
       date: '2023-12-05'
     },
     {
-        id: 'component-02',
-        title: 'Auth Components',
-        categories: ['#React', '#JWT'],
-        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-        date: '2023-12-05'
-      },
-      {
-        id: 'component-03',
-        title: 'Auth Components',
-        categories: ['#React', '#JWT'],
-        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-        date: '2023-12-05'
-      },
-      {
-        id: 'component-04',
-        title: 'Auth Components',
-        categories: ['#React', '#JWT'],
-        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-        date: '2023-12-05'
-      },
-      {
-        id: 'component-05',
-        title: 'Auth Components',
-        categories: ['#React', '#JWT'],
-        thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
-        date: '2023-12-05'
-      },
+      id: 'component-02',
+      title: 'Auth Components',
+      categories: ['#React', '#JWT'],
+      thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+      date: '2023-12-05'
+    },
+    {
+      id: 'component-03',
+      title: 'Auth Components',
+      categories: ['#React', '#JWT'],
+      thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+      date: '2023-12-05'
+    },
+    {
+      id: 'component-04',
+      title: 'Auth Components',
+      categories: ['#React', '#JWT'],
+      thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+      date: '2023-12-05'
+    },
+    {
+      id: 'component-05',
+      title: 'Auth Components',
+      categories: ['#React', '#JWT'],
+      thumbnail: 'https://kazokku.com/blog/wp-content/uploads/2023/12/APA-ITU-PROJECT-1.webp',
+      date: '2023-12-05'
+    },
   ];
 
   // All unique tags
@@ -157,7 +156,7 @@ const Projects = () => {
     ...templatesData.flatMap(template => template.categories),
     ...componentsData.flatMap(component => component.categories)
   ]));
-  
+
   // State management
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
@@ -167,7 +166,7 @@ const Projects = () => {
 
   // Get current tab data
   const getCurrentData = () => {
-    switch(activeTab) {
+    switch (activeTab) {
       case 'templates': return templatesData;
       case 'components': return componentsData;
       default: return projectsData;
@@ -177,40 +176,40 @@ const Projects = () => {
   // Filter and sort data
   const filterAndSortData = (data) => {
     let results = [...data];
-    
+
     // Apply search filter
     if (searchTerm) {
       results = results.filter(item =>
         item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.categories.some(tag => 
+        item.categories.some(tag =>
           tag.toLowerCase().includes(searchTerm.toLowerCase().replace('#', ''))
         )
       );
     }
-    
+
     // Apply tag filter
     if (selectedTags.length > 0) {
       results = results.filter(item =>
         selectedTags.every(tag => item.categories.includes(tag))
       );
     }
-    
+
     // Apply sorting
     results.sort((a, b) => {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
       return sortOption === 'newest' ? dateB - dateA : dateA - dateB;
     });
-    
+
     return results;
   };
 
   const filteredData = filterAndSortData(getCurrentData());
 
   const toggleTag = (tag) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag) 
+    setSelectedTags(prev =>
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)
         : [...prev, tag]
     );
   };
@@ -232,10 +231,10 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar Section */}
-        <Navbar/>
+      <Navbar />
 
       {/* Hero Section */}
-      <Hero/>
+      <Hero />
 
       {/* Main Content */}
       <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -247,38 +246,35 @@ const Projects = () => {
               <nav className="-mb-px flex space-x-8">
                 <button
                   onClick={() => setActiveTab('projects')}
-                  className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === 'projects'
+                  className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'projects'
                       ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   <i className="ri-stack-line mr-2"></i> Projects
                 </button>
                 <button
                   onClick={() => setActiveTab('templates')}
-                  className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === 'templates'
+                  className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'templates'
                       ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   <i className="ri-layout-masonry-line mr-2"></i> Templates
                 </button>
                 <button
                   onClick={() => setActiveTab('components')}
-                  className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === 'components'
+                  className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'components'
                       ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   <i className="ri-boxing-line mr-2"></i> Components
                 </button>
               </nav>
             </div>
           </div>
-          
+
           {/* Search and Sort on the right - aligned with tabs */}
           <div className="w-full md:w-auto flex items-center gap-3">
             <div className="relative">
@@ -293,7 +289,7 @@ const Projects = () => {
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-            
+
             <div className="relative">
               <select
                 value={sortOption}
@@ -314,18 +310,18 @@ const Projects = () => {
             {/* <h2 className="text-lg font-medium text-gray-900">
               {filteredData.length} {filteredData.length === 1 ? 'Item' : 'Items'} Found
             </h2> */}
-            
+
             {selectedTags.length > 0 && (
               <div className="flex items-center">
                 <span className="text-sm text-gray-600 mr-2">Filters:</span>
                 <div className="flex flex-wrap gap-2">
                   {selectedTags.map(tag => (
-                    <span 
+                    <span
                       key={tag}
                       className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
                     >
                       {tag}
-                      <button 
+                      <button
                         onClick={() => toggleTag(tag)}
                         className="ml-1.5 inline-flex items-center justify-center w-4 h-4 rounded-full text-blue-400 hover:bg-blue-200 hover:text-blue-500"
                       >
@@ -333,7 +329,7 @@ const Projects = () => {
                       </button>
                     </span>
                   ))}
-                  <button 
+                  <button
                     onClick={clearFilters}
                     className="text-xs text-blue-600"
                   >
@@ -352,11 +348,10 @@ const Projects = () => {
                 <button
                   key={tag}
                   onClick={() => toggleTag(tag)}
-                  className={`px-3 py-1 text-sm rounded-full transition-all ${
-                    selectedTags.includes(tag) 
+                  className={`px-3 py-1 text-sm rounded-full transition-all ${selectedTags.includes(tag)
                       ? 'bg-blue-600 text-white shadow-md'
                       : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                  }`}
+                    }`}
                 >
                   {tag}
                 </button>
@@ -386,8 +381,7 @@ const Projects = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {filteredData.length > 0 ? (
               filteredData.map((item) => (
-                <Link
-                  to={`/${item.id}`}
+                <div
                   key={item.id}
                   className="group bg-white rounded-[8px] shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 h-full flex flex-col"
                 >
@@ -398,40 +392,67 @@ const Projects = () => {
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white font-medium flex items-center">
-                        View Details <i className="ri-arrow-right-line ml-1"></i>
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-4 flex-grow flex flex-col">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#035b71] transition-colors">
-                      {item.title}
-                    </h3>
-                    
-                    <div className="flex flex-wrap gap-2 mt-2">
+                    {/* Categories in top-left corner */}
+                    <div className="absolute top-2 left-2 flex flex-wrap gap-1">
                       {item.categories.map(tag => (
-                        <span 
-                          key={tag} 
-                          className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800"
+                        <span
+                          key={tag}
+                          className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm shadow-sm"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    
-                    <div className="mt-3 text-sm text-gray-500">
-                      <i className="ri-calendar-line mr-1"></i>
-                      {new Date(item.date).toLocaleDateString('en-US', {
-                        year: 'numeric', 
-                        month: 'short', 
-                        day: 'numeric'
-                      })}
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-4 flex-grow flex flex-col">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-0 group-hover:text-[#035b71] transition-colors">
+                      {item.title}
+                    </h3>
+
+                    <div className="mt-2 flex justify-between items-center">
+                      <div className="text-sm text-gray-500">
+                        <i className="ri-calendar-line mr-1"></i>
+                        {new Date(item.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </div>
+
+                      <div className="flex gap-1">
+                        <a
+                          href="https://github.com/fatkhurrhn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Download
+                        </a>
+                        <a
+                          href="https://github.com/fatkhurrhn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Demo
+                        </a>
+                        <a
+                          href="https://github.com/fatkhurrhn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Code
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))
             ) : (
               <div className="col-span-full text-center py-16">
@@ -442,7 +463,7 @@ const Projects = () => {
                 <p className="text-gray-600 max-w-md mx-auto">
                   Try adjusting your search or filter criteria to find what you are looking for.
                 </p>
-                <button 
+                <button
                   onClick={clearFilters}
                   className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
@@ -455,7 +476,7 @@ const Projects = () => {
       </div>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
