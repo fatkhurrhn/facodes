@@ -2,6 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure proper layout */
+html, body, #root {
+  height: 100%;
+}
+
+/* Remove any max-width constraints on content */
+.prose {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* Ensure text flows naturally */
+p {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-6;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-8 mb-4;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
+/* Custom scroll-margin for anchor links */
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
+
+/* Prose styling for content */
+.prose {
+  max-width: 65ch;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-6;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-8 mb-4;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
 body {
     margin: 0;
 }

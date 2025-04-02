@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-// import Hero from "../Components/HeroSection";
+import Hero from "../Components/HeroSection";
 
 // import images - thumnail
 import thumbail from "/Project/thumbnail.png";
@@ -349,7 +349,7 @@ const Projects = () => {
       <Navbar />
 
       {/* Hero Section */}
-      {/* <Hero /> */}
+      <Hero />
 
       {/* Main Content */}
       <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
