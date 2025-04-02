@@ -11,15 +11,16 @@ function App() {
     <div className="flex flex-col min-h-screen bg-white text-gray-800">
       {/* Fixed Navbar */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-blue-600 shadow-md">
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-[1240px] px-4">
           <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
         </div>
       </header>
 
       {/* Main Content Area */}
-      <div className="flex pt-16 min-h-screen"> {/* pt-16 to account for fixed navbar */}
-        {/* Desktop Sidebar - Fixed */}
-        <div className="hidden lg:block fixed top-16 left-0 bottom-0 w-72 bg-gray-50 border-r border-gray-200 overflow-y-auto z-30">
+      <div className="flex pt-16 min-h-screen">
+        {/* Desktop Sidebar - Fixed but within max-w-[1240px] */}
+        <div className="hidden lg:block fixed top-16 h-[calc(100vh-4rem)] w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto z-30"
+          style={{ left: 'calc(50% - 620px)' }}> {/* 620px = 1240px/2 */}
           <Sidebar 
             activePage={activePage} 
             setActivePage={setActivePage}
@@ -46,8 +47,8 @@ function App() {
         {/* Scrollable Main Content */}
         <main className={`flex-1 overflow-y-auto transition-all duration-300 ${sidebarOpen ? 'ml-64' : ''} lg:ml-64`}>
           <div className="mx-auto max-w-[1240px]">
-            <div className="p-6 lg:p-8 lg:pl-12"> {/* Adjustable padding */}
-              <div className="max-w-4xl mx-auto"> {/* Content container */}
+            <div className="p-6 lg:p-8 lg:pl-12">
+              <div className="max-w-4xl mx-auto">
                 {activePage === 'about' && <About />}
               </div>
             </div>
