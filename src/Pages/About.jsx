@@ -1,4 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-markup';
+import 'prismjs/themes/prism-tomorrow.css';
 
 export default function ProjectShowcase() {
   const [activeTab, setActiveTab] = useState('html');
@@ -70,10 +76,10 @@ button.addEventListener("click", (e) => {
 
   const [editableCode, setEditableCode] = useState(defaultCode);
 
-  const handleCodeChange = (e) => {
+  const handleCodeChange = (code) => {
     setEditableCode(prev => ({
       ...prev,
-      [activeTab]: e.target.value
+      [activeTab]: code
     }));
   };
 
@@ -81,8 +87,18 @@ button.addEventListener("click", (e) => {
     setEditableCode(defaultCode);
   };
 
+  // Determine language for highlighting
+  const getLanguage = () => {
+    switch(activeTab) {
+      case 'html': return languages.markup;
+      case 'css': return languages.css;
+      case 'js': return languages.javascript;
+      default: return languages.markup;
+    }
+  };
+
   return (
-    <article className="w-full max-w-6xl mx-auto px-4">
+    <article className="w-full max-w-6xl mx-auto px-0">
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Interactive Project Showcase</h1>
       <p className="text-lg text-gray-600 mb-8">
         Edit the code below and see live changes in the preview. 
@@ -137,12 +153,21 @@ button.addEventListener("click", (e) => {
           ))}
         </div>
         
-        <div className="bg-gray-800">
-          <textarea
+        <div className="h-96 overflow-auto">
+          <Editor
             value={editableCode[activeTab]}
-            onChange={handleCodeChange}
-            className="w-full h-96 p-4 font-mono text-gray-100 bg-gray-900 resize-none outline-none caret-white text-sm"
-            spellCheck="false"
+            onValueChange={handleCodeChange}
+            highlight={code => highlight(code, getLanguage(), activeTab)}
+            padding={16}
+            style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: 14,
+              backgroundColor: '#1e1e1e',
+              color: '#d4d4d4',
+              minHeight: '100%'
+            }}
+            textareaClassName="code-editor-textarea"
+            preClassName="code-editor-pre"
           />
         </div>
       </div>
