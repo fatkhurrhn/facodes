@@ -49,7 +49,7 @@ function App() {
           <div className="mx-auto max-w-[1240px]">
             <div className="p-6 lg:p-8 lg:pl-12">
               <div className="max-w-4xl mx-auto">
-                {activePage === 'about' && <About />}
+                {activePage === 'button01' && <About />}
               </div>
             </div>
           </div>
