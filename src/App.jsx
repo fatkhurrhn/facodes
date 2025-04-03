@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import Tes from './Pages/Tes';
 
+import Per from './Pages/Percobaan';
+
 import Button01 from './Pages/DetailComponents/Button01';
 
 // import Page Project
@@ -26,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/tes" element={<Tes />} />
+        <Route path="/tess" element={<Per />} />
 
         <Route path="/button-01" element={<Button01 />} />
 
