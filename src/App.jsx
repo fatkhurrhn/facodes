@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import Tes from './Pages/Tes';
 
-import Per from './Pages/Percobaan';
+import Per from './Pages/StyleDocs';
 
 import Button01 from './Pages/DetailComponents/Button01';
 
